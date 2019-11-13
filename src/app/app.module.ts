@@ -1,16 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 import { AppComponent } from './app.component';
+import { OverlayComponent } from './overlay/overlay.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
+  declarations: [AppComponent, OverlayComponent],
+  imports: [BrowserModule, OverlayModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, OverlayComponent]
 })
-export class AppModule { }
+export class AppModule {}
