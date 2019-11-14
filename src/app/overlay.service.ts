@@ -1,7 +1,7 @@
 import { Overlay, OverlayConfig } from '@angular/cdk/overlay';
 import { ComponentPortal, PortalInjector } from '@angular/cdk/portal';
 import { Injectable, Injector, TemplateRef, Type } from '@angular/core';
-import { MyOverlayRef } from './over.ref';
+import { MyOverlayRef } from './myoverlay-ref';
 import { OverlayComponent } from './overlay/overlay.component';
 
 @Injectable({
@@ -30,7 +30,7 @@ export class OverlayService {
   }
 
   createInjector(ref: MyOverlayRef, inj: Injector) {
-    const tokens = new WeakMap([[MyOverlayRef, ref]]);
-    return new PortalInjector(inj, tokens);
+    const injectorTokens = new WeakMap([[MyOverlayRef, ref]]);
+    return new PortalInjector(inj, injectorTokens);
   }
 }
