@@ -1,7 +1,11 @@
-<div class="popover">
+<div class="modal-content">
   <ng-container [ngSwitch]="contentType">
 
-    <div *ngSwitchCase="'text'" [innerHTML]="content"></div>
+    <ng-container *ngSwitchCase="'string'">
+      <div class="box">
+        <div [innerHTML]="content"></div>
+      </div>
+    </ng-container>
 
     <ng-container *ngSwitchCase="'template'">
       <ng-container *ngTemplateOutlet="content; context: context"></ng-container>
