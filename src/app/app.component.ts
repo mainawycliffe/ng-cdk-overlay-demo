@@ -7,9 +7,11 @@ import { OverlayService } from './overlay.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  content = 'Hello, who am i?';
+
   constructor(private overlayService: OverlayService) {}
 
-  open(content: TemplateRef<any>) {
+  open(content: TemplateRef<any> | string) {
     const ref = this.overlayService.open(content, null);
 
     ref.afterClosed$.subscribe(data => {
