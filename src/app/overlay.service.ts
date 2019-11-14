@@ -1,10 +1,8 @@
-import { Injectable, TemplateRef, Type, Injector } from '@angular/core';
-import { Subject, config } from 'rxjs';
-import { OverlayRef, Overlay, OverlayConfig } from '@angular/cdk/overlay';
-import { ComponentPortal } from '@angular/cdk/portal';
-import { OverlayComponent } from './overlay/overlay.component';
+import { Overlay, OverlayConfig } from '@angular/cdk/overlay';
+import { ComponentPortal, PortalInjector } from '@angular/cdk/portal';
+import { Injectable, Injector, TemplateRef, Type } from '@angular/core';
 import { MyOverlayRef } from './over.ref';
-import { PortalInjector } from './injector';
+import { OverlayComponent } from './overlay/overlay.component';
 
 @Injectable({
   providedIn: 'root'
