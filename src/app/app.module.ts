@@ -9,6 +9,7 @@ import { OverlayComponent } from './overlay/overlay.component';
   declarations: [AppComponent, OverlayComponent],
   imports: [BrowserModule, OverlayModule],
   providers: [],
-  bootstrap: [AppComponent, OverlayComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [OverlayComponent]
 })
 export class AppModule {}
