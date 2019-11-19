@@ -1,18 +1,56 @@
 <div class="section">
   <div class="container has-text-centered">
-    <div class="buttons is-centered">
-      <button (click)="open(tpl)" class="button is-primary is-large">
-        Open Modal
-      </button>
-      <button (click)="open(content)" class="button is-primary is-large">
-        Open String Modal
-      </button>
-      <button (click)="open(yesNoComponent)" class="button is-primary is-large">
-        Component Modal
-      </button>
-      <button (click)="open(subscribeComponent)" class="button is-primary is-large">
-        Component Modal
-      </button>
+    <div class="columns">
+      <div class="column has-text-left">
+        String content modal overlay
+      </div>
+      <div class="column is-narrow">
+        <button (click)="open(content)" class="button is-small is-primary">
+          show
+        </button>
+      </div>
+      <div class="column"></div>
+    </div>
+    <div class="columns">
+      <div class="column  has-text-left">
+        Yes-No template content modal overlay
+      </div>
+      <div class="column is-narrow">
+        <button (click)="open(tpl)" class="button is-small is-primary">
+          Show
+        </button>
+      </div>
+      <div class="column">
+        {{ yesNoTemplateResponse }}
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column has-text-left">
+        Yes-No Component content modal overlay
+      </div>
+      <div class="column is-narrow">
+        <button (click)="open(yesNoComponent)" class="button is-small is-primary">
+          show
+        </button>
+      </div>
+      <div class="column">
+        {{ yesNoComponentResponse }}
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column has-text-left">
+        Subscribe form component content modal overlay
+      </div>
+      <div class="column is-narrow">
+        <button (click)="open(subscribeComponent)" class="button is-small is-primary">
+          show
+        </button>
+      </div>
+      <div class="column">
+        <ng-container *ngIf="subscribeData">
+          {{ subscribeData | json }}
+        </ng-container>
+      </div>
     </div>
   </div>
 </div>
