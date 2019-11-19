@@ -1,0 +1,29 @@
+<div class="modal-card">
+  <form [formGroup]="frmSubscribe" (submit)="submit()">
+    <header class="modal-card-head has-text-weight-bold">
+      Subscribe
+    </header>
+    <section class="modal-card-body">
+      <div class="field">
+        <label class="label">Name</label>
+        <div class="control">
+          <input formControlName="name" class="input" type="text" placeholder="e.g Alex Smith">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control">
+          <input formControlName="email" class="input" type="email" placeholder="e.g. alexsmith@gmail.com">
+        </div>
+      </div>
+
+    </section>
+    <footer class="modal-card-foot">
+      <div class="buttons">
+        <button type="submit" class="button is-success">Subscribe</button>
+        <button (click)="cancel()" type="button" class="button is-danger">Cancel</button>
+      </div>
+    </footer>
+  </form>
+</div>
