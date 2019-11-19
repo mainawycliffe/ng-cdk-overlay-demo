@@ -13,6 +13,10 @@ export class OverlayComponent implements OnInit {
 
   constructor(private ref: MyOverlayRef) {}
 
+  close() {
+    this.ref.close(null);
+  }
+
   ngOnInit() {
     this.content = this.ref.content;
 
