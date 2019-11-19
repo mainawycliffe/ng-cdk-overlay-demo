@@ -10,10 +10,10 @@ import { OverlayComponent } from './overlay/overlay.component';
 export class OverlayService {
   constructor(private overlay: Overlay, private injector: Injector) {}
 
-  open<T = any>(
+  open<R = any, T = any>(
     content: string | TemplateRef<any> | Type<any>,
     data: T
-  ): MyOverlayRef<T> {
+  ): MyOverlayRef<R> {
     const configs = new OverlayConfig({
       hasBackdrop: true,
       backdropClass: 'modal-background'
@@ -21,7 +21,7 @@ export class OverlayService {
 
     const overlayRef = this.overlay.create(configs);
 
-    const myOverlayRef = new MyOverlayRef<T>(overlayRef, content, data);
+    const myOverlayRef = new MyOverlayRef<R>(overlayRef, content, data);
 
     const injector = this.createInjector(myOverlayRef, this.injector);
     overlayRef.attach(new ComponentPortal(OverlayComponent, null, injector));
