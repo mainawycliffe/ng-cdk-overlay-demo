@@ -9,8 +9,11 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class SubscribeComponent implements OnInit {
   frmSubscribe = this.fb.group({
-    name: null,
-    email: [null, Validators.compose([Validators.email, Validators.required])]
+    name: 'John Doe',
+    email: [
+      'johndoe@gmail.com',
+      Validators.compose([Validators.email, Validators.required])
+    ]
   });
 
   constructor(private fb: FormBuilder, private ref: MyOverlayRef) {}
