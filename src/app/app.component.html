@@ -7,14 +7,26 @@
       <button (click)="open(content)" class="button is-primary is-large">
         Open String Modal
       </button>
+      <button (click)="open(yesNoComponent)" class="button is-primary is-large">
+        Component Modal
+      </button>
+      <button (click)="open(subscribeComponent)" class="button is-primary is-large">
+        Component Modal
+      </button>
     </div>
   </div>
 </div>
 
-<ng-template #tpl>
+<ng-template #tpl let-close="close">
   <div class="modal-card">
     <section class="modal-card-body">
-      Some Kind of Modal Template
+      A yes no dialog, using template
     </section>
+    <footer class="modal-card-foot">
+      <div class="buttons is-right">
+        <button (click)="close('yes')" type="button" class="button is-success">Yes</button>
+        <button (click)="close('no')" type="button" class="button is-danger">No</button>
+      </div>
+    </footer>
   </div>
 </ng-template>
