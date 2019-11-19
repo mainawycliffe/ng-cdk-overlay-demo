@@ -9,8 +9,8 @@ export interface OverlayCloseEvent<R> {
   data: R;
 }
 
+// R = Response Data Type, T = Data passed to Modal Type
 export class MyOverlayRef<R = any, T = any> {
-  // R = Response Data Type, T = Data passed to Modal Type
   afterClosed$ = new Subject<OverlayCloseEvent<R>>();
 
   constructor(

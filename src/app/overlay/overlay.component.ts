@@ -7,7 +7,7 @@ import { MyOverlayRef } from '../myoverlay-ref';
   styleUrls: ['./overlay.component.scss']
 })
 export class OverlayComponent implements OnInit {
-  contentType: 'template' | 'string' | 'component' = 'component';
+  contentType: 'template' | 'string' | 'component';
   content: string | TemplateRef<any> | Type<any>;
   context;
 
@@ -27,6 +27,8 @@ export class OverlayComponent implements OnInit {
       this.context = {
         close: this.ref.close.bind(this.ref)
       };
+    } else {
+      this.contentType = 'component';
     }
   }
 }

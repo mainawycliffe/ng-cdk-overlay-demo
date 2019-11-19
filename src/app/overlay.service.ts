@@ -21,7 +21,7 @@ export class OverlayService {
 
     const overlayRef = this.overlay.create(configs);
 
-    const myOverlayRef = new MyOverlayRef<R>(overlayRef, content, data);
+    const myOverlayRef = new MyOverlayRef<R, T>(overlayRef, content, data);
 
     const injector = this.createInjector(myOverlayRef, this.injector);
     overlayRef.attach(new ComponentPortal(OverlayComponent, null, injector));
